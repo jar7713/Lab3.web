@@ -1,0 +1,131 @@
+1. Membuat List:
+
+Ada tiga jenis list dalam HTML:
+Ordered List (<ol>) untuk list yang terurut.
+Unordered List (<ul>) untuk list yang tidak terurut.
+Description List (<dl>) untuk list dengan deskripsi.
+Contoh:
+<ol type="A" start="D">
+  <li>Pemrograman Web</li>
+  <li>Sistem Informasi</li>
+</ol>
+
+2. Membuat Table:
+
+Tabel dalam HTML terdiri dari tag <table>, <tr> untuk baris, dan <td> untuk kolom.
+Anda dapat menggabungkan sel menggunakan atribut colspan atau rowspan.
+Contoh:
+<table border="1">
+  <tr>
+    <td colspan="2">Baris 1 kolom 1</td>
+  </tr>
+  <tr>
+    <td>Baris 2 kolom 1</td>
+    <td>Baris 2 kolom 2</td>
+  </tr>
+</table>
+
+3. Membuat Form:
+
+Form HTML digunakan untuk mengambil input dari pengguna. Tag <form> berisi atribut action untuk tujuan pengiriman dan method untuk metode pengiriman data (GET atau POST).
+Contoh form login sederhana:
+<form action="proses.php" method="post">
+  <label for="uname">Username</label>
+  <input type="text" id="uname" name="username">
+  <label for="passwd">Password</label>
+  <input type="password" id="passwd" name="password">
+  <input type="submit" value="Login">
+</form>
+
+Pertanyaan dan Tugas
+1. Buatlah form yang menampilkan dropdown menu dan listbox dengan multiple selection.
+Laporan Praktikum
+1. Buatlah repository baru dengan nama Lab3Web.
+2. Kerjakan semua latihan yang diberikan sesuai urutannya.
+3. Screenshot setiap perubahannya.
+4. Buatlah file README.md dan tuliskan penjelasan dari setiap langkah praktikum beserta 
+screenshotnya.
+5. Commit hasilnya pada repository masing-masing.
+6. Kirim URL repository pada e-learning ecampus
+
+jawaban
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form dengan Dropdown dan Listbox</title>
+    <style>
+        form p > label {
+            display: inline-block;
+            width: 100px;
+        }
+        form input[type="text"], form textarea, form select {
+            border: 1px solid #197a43;
+            padding: 5px;
+            width: 200px;
+        }
+        form input[type="submit"] {
+            border: 1px solid #197a43;
+            background-color: #197a43;
+            color: #ffffff;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        form select[multiple] {
+            height: 100px; /* Atur tinggi listbox */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form dengan Dropdown dan Listbox</h1>
+    </header>
+
+    <form action="proses.php" method="post">
+        <fieldset>
+            <legend>Data Pelanggan</legend>
+
+            <!-- Input Nama -->
+            <p>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+            </p>
+
+            <!-- Dropdown Menu Pekerjaan -->
+            <p>
+                <label for="pekerjaan">Pekerjaan:</label>
+                <select id="pekerjaan" name="pekerjaan">
+                    <option value="Pegawai">Pegawai</option>
+                    <option value="Wirausaha">Wirausaha</option>
+                    <option value="Pelajar">Pelajar</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </p>
+
+            <!-- Listbox Hobi dengan Multiple Selection -->
+            <p>
+                <label for="hobi">Hobi:</label>
+                <select id="hobi" name="hobi[]" multiple>
+                    <option value="Membaca">Membaca</option>
+                    <option value="Menulis">Menulis</option>
+                    <option value="Bersepeda">Bersepeda</option>
+                    <option value="Memasak">Memasak</option>
+                    <option value="Travelling">Travelling</option>
+                    <option value="Bermain Musik">Bermain Musik</option>
+                </select>
+            </p>
+
+            <!-- Submit Button -->
+            <p>
+                <input type="submit" value="Kirim">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+penjelasan:
+Dropdown Menu: Bagian ini menggunakan tag <select> untuk pekerjaan, yang menampilkan pilihan seperti Pegawai, Wirausaha, Pelajar, dan lain-lain.
+Listbox: Bagian hobi menggunakan tag <select> dengan atribut multiple, sehingga pengguna dapat memilih lebih dari satu hobi, seperti Membaca, Menulis, Bersepeda, dll.
+Style: CSS sederhana untuk mempercantik form, dengan pengaturan padding, border, dan styling khusus untuk elemen form.
